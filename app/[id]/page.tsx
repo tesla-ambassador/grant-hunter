@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { GrantProgram } from "@/lib/db";
+import { parseHTMLString } from "@/hooks/parse-html";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -32,20 +33,10 @@ export default async function ProgramDetailPage({ params }: PageProps) {
     >
       <Link href="/">&larr; Back to all grants</Link>
 
-      <h1 style={{ marginTop: "1.5rem" }} className="text-red-500">{program.name}</h1>
-      {program.imgUrl && (
-        <img
-          src={program.imgUrl}
-          alt={program.name}
-          style={{
-            width: "100%",
-            maxHeight: "300px",
-            objectFit: "cover",
-            borderRadius: "8px",
-            margin: "1rem 0",
-          }}
-        />
-      )}
+      <h1 style={{ marginTop: "1.5rem" }} className="text-red-500">
+        {program.name}
+      </h1>
+
       <div
         style={{
           background: "#f5f5f5",

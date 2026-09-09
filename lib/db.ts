@@ -7,7 +7,7 @@ export interface GrantProgram {
   short_description: string;
   deadline: string;
   link: string;
-  imgUrl?: string;
+  imageUrl?: string;
   scraped_at?: string;
 }
 
