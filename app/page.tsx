@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { GrantProgram } from "@/lib/db";
+import ChromaticImageProductHeroDemo from "@/components/chromatic-image-product-hero-demo";
+import { GrantCard } from "@/components/other-comps";
 
 async function getPrograms(): Promise<GrantProgram[]> {
   const res = await fetch("http://localhost:3000/api/programs", {
@@ -13,43 +15,23 @@ export default async function ProgramListPage() {
   const programs = await getPrograms();
 
   return (
-    <main
-      style={{
-        maxWidth: "800px",
-        margin: "2rem auto",
-        fontFamily: "system-ui, sans-serif",
-      }}
-    >
-      <h1>German Public Funding Programs</h1>
-      <p style={{ color: "#666" }}>
-        Source: DSEE (Deutsche Stiftung für Engagement und Ehrenamt)
-      </p>
+    <main>
+      <ChromaticImageProductHeroDemo />
 
       {programs.length === 0 ? (
         <p>
           No programs found. Run <code>npx tsx scripts/scrape.ts</code> first.
         </p>
       ) : (
-        <div style={{ display: "grid", gap: "1rem", marginTop: "1.5rem" }}>
+        <div className="px-4 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 bg-gray-100 md:px-12 lg:px-32">
           {programs.map((program) => (
-            <article
+            <GrantCard
               key={program.id}
-              style={{
-                border: "1px solid #ddd",
-                borderRadius: "8px",
-                padding: "1rem",
-              }}
-            >
-              <h2 style={{ margin: "0 0 0.5rem 0" }}>
-                <Link href={`/${program.id}`}>{program.name}</Link>
-              </h2>
-              <p style={{ margin: "0 0 1rem 0", color: "#444" }}>
-                {program.short_description}
-              </p>
-              <div style={{ fontSize: "0.875rem", color: "#888" }}>
-                <strong>Deadline:</strong> {program.deadline}
-              </div>
-            </article>
+              href={`/${program.id}`}
+              deadline={program.deadline}
+              name={program.name}
+              desc={program.short_description}
+            />
           ))}
         </div>
       )}

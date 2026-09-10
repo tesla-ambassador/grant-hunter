@@ -24,18 +24,28 @@ export default async function ProgramDetailPage({ params }: PageProps) {
   }
 
   return (
-    <main
-      style={{
-        maxWidth: "700px",
-        margin: "2rem auto",
-        fontFamily: "system-ui, sans-serif",
-      }}
-    >
+    <main className="max-w-4xl mx-auto py-32 px-4 space-y-6">
       <Link href="/">&larr; Back to all grants</Link>
 
-      <h1 style={{ marginTop: "1.5rem" }} className="text-red-500">
+      <h1
+        style={{ marginTop: "1.5rem" }}
+        className="text-black font-bold text-3xl"
+      >
         {program.name}
       </h1>
+
+      {program.short_description !== "" ? (
+        <div className="space-y-2">
+          <h3 className="text-xl font-semibold">Description</h3>
+          <p style={{ lineHeight: "1.6" }} className="text-pretty">
+            {program.short_description}
+          </p>
+        </div>
+      ) : (
+        <div className="space-y-2 text-center">
+          <h3 className="text-xl font-semibold">Keine Description Vorhanden</h3>
+        </div>
+      )}
 
       <div
         style={{
@@ -45,11 +55,14 @@ export default async function ProgramDetailPage({ params }: PageProps) {
           margin: "1rem 0",
         }}
       >
-        <strong>Deadline / Application Period:</strong> {program.deadline}
+        {program.deadline.toLowerCase().includes("keine") ? (
+          <strong>{program.deadline}</strong>
+        ) : (
+          <>
+            <strong>Deadline / Application Period:</strong> {program.deadline}
+          </>
+        )}
       </div>
-
-      <h3>Description</h3>
-      <p style={{ lineHeight: "1.6" }}>{program.short_description}</p>
 
       <a
         href={program.link}
