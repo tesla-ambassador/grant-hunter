@@ -128,9 +128,3 @@ export async function scrapeSearchResults(
   );
   return results;
 }
-
-// --- EXAMPLE USAGE ---
-// Executing against BfN (Bundesamt für Naturschutz) search
-scrapeSearchResults("https://www.bfn.de", "förderung", 3).then((items) => {
-  console.log(JSON.stringify(items, null, 2));
-});
