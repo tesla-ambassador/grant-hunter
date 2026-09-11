@@ -5,6 +5,7 @@
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
+  - [How To Start The App](#How-To-Start-The-APP)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -36,6 +37,9 @@ Note: At the time of writing, I didn't get enough time to try parsing content by
 ### Screenshot
 
 ![](./public/grant-hunter.png)
+
+### How To Start The APP
+> Start by installing the necessary dependencies by running `npm run dev` in your terminal then start the scraper by typing this command `npx tsx scripts/scrape-all.ts` then after the scraper is done scrapping, you can start the app by typing `npm run dev`. You can then access the app using your browser by typing visting `https://localhost:3000` or `http://localhost:3000`
 
 ### Links
 
