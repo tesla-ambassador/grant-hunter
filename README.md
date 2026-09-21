@@ -34,16 +34,20 @@ Users should be able to:
 
 Note: At the time of writing, I didn't get enough time to try parsing content by websites whose content is JavaScript rendered. Also I had fun building this because this was the first time I've actually built a scraper, normally I get to work with already made APIs... It's safe to say that I won't take that privilege for granted 😂
 
+Update: I managed to build an adapter for the SSR site tomorrow I'll just add a few more fields that I think might be important for all sites.
+
 ### Screenshot
 
 ![](./public/grant-hunter.png)
 
 ### How To Start The APP
+
 > Start by installing the necessary dependencies by running `npm install` in your terminal then start the scraper by typing this command `npx tsx scripts/scrape-all.ts` then after the scraper is done scrapping, you can start the app by typing `npm run dev`. You can then access the app using your browser by typing visting `https://localhost:3000` or `http://localhost:3000`
 
 ### Links
 
 - Solution URL: [GitHub Repository](https://github.com/tesla-ambassador/grant-hunter)
+
 <!-- - Live Site URL: [Personal Finance App](https://personal-finance-app-black.vercel.app/) -->
 
 ## My process
@@ -64,6 +68,8 @@ The second site used a search filter to bring up the grant funding pages and the
 Lastly, I put together a rag-tag UI. I mean it was looking too basic at first and tbh even though it's a small project, I can't sleep at night knowing I shipped a nightmarish UI. I also needed an excuse to use [aceternity UI's Chromatic Image](https://ui.aceternity.com/components/chromatic-image) that was the only crazy part of the UI and It was just a matter of plugging and playing... changing a few words, these days it really doesn't cost nothing to have something good looking. Also I just discovered that tailwind's components have been moved to tailwind plus. But back to the point, I thought it a good idea to take an hour or two to make it look a little less ugly.
 
 > Bonus Note: If I get time even after submitting, I'll still try to give it a try and scrape from the JavaScript rendered site... I'll see tomorrow.
+
+> Update: It's a week later, I managed to get the SSR adapter running, it took me an hour cause I just thought I'd prolly work on some of the things Chase pointed out in our meet. I'll try to add more fields I deem important to the database tomorrow and prolly squeeze in enough time to cook up a UI that can display this data better. Also I'm building an anime discord bot... I don't really know what it should do between rankings and powerscaling but it seems like something cool to build.
 
 ### Built with
 
