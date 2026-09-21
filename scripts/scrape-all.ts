@@ -3,8 +3,9 @@ import crypto from "crypto";
 import { SiteAdapter, ScrapedProgram } from "@/scrappers/types";
 import { DseeAdapter } from "@/scrappers/adapters/dsee.adapters";
 import { BfnAdapter } from "@/scrappers/adapters/bfn.adapters";
+import { AktionMenschAdapter } from "@/scrappers/adapters/menschen.adapters";
 
-const Adapters: SiteAdapter[] = [DseeAdapter, BfnAdapter];
+const Adapters: SiteAdapter[] = [AktionMenschAdapter, DseeAdapter, BfnAdapter];
 
 export function saveProgram(program: ScrapedProgram) {
   const insertSmt = db.prepare(`
