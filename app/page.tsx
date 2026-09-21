@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { GrantProgram } from "@/lib/db";
 import ChromaticImageProductHeroDemo from "@/components/chromatic-image-product-hero-demo";
 import { GrantCard } from "@/components/other-comps";
