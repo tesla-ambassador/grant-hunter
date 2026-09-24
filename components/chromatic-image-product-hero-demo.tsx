@@ -23,12 +23,15 @@ export default function ChromaticImageProductHeroDemo() {
           </div>
           <div className="pointer-events-auto flex select-text flex-col items-start gap-6">
             <div className="flex flex-col gap-3">
-              <p className="text-base/7 sm:text-sm/6">Scroll ontop of the picture to see something cool</p>
+              <p className="text-base/7 sm:text-sm/6">
+                Scroll ontop of the picture to see something cool
+              </p>
               <h3 className="max-w-[10ch] text-balance text-5xl font-medium tracking-tight sm:text-6xl lg:text-7xl">
                 Grant Hunter
               </h3>
               <p className="max-w-[42ch] text-pretty text-base/7 text-white/75 sm:text-sm/6">
-                These words are for aesthetic, really but see the scroll thing, pretty cool huh!
+                These words are for aesthetic, really but see the scroll thing,
+                pretty cool huh!
               </p>
             </div>
             <button
